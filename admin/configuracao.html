@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+           
+           
+        
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 20% 80%;
+            height: 100vh;
+        }
+
+        .menu-superior {
+            background: #999;
+            height: 40px;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            padding-right: 50px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        .menu-superior ul {
+            display: flex;
+            gap: 30px;
+
+        }
+
+        .menu-superior li {
+            position: relative;
+        }
+
+        .menu {
+            background-color: #ccc;
+            padding: 20px 30px;
+        }
+
+        .menu li {
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu a {
+            display: flex;
+            gap: 10px;
+        }
+
+        .conteudo {
+            padding: 20px 30px;
+        }
+
+        .numero {
+            background: red;
+            padding: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -7px;
+            right: -16px;
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+
+        }
+
+        .container h2 {
+
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .container p {
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background: #888;
+            color: white;
+            font-size: 1em;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .form-button:hover {
+            background: #ccc;
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .item-menu,
+            h1,
+            .notificacao-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <nav class="menu-superior">
+            <div>
+                <ul>
+                    <li><a href="">Notificação</a><span class="numero">5</span></li>
+                    <li><a href="">Sair</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="dashboard">
+
+            <nav class="menu">
+
+                <h1>Stackinho</h1>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> <span
+                                class="item-menu">Dashboard</span></a>
+                    </li>
+                    <li><a href=""><i class="fas fa-file"></i> <span class="item-menu">Meus posts</span></a></li>
+
+                    <li><a href=""><i class="fas fa-file-medical"></i> <span class="item-menu">Criar post</span></a>
+                    </li>
+                    <li><a href=""><i class="fas fa-user-friends"></i> <span class="item-menu">Amigos</span></a></li>
+                    <li><a href=""><i class="fas fa-comment-alt"></i> <span class="item-menu">Mensagens</span></a>
+                        <span class="notificacao-menu">5</span>
+                    </li>
+
+                    <li><a href=""><i class="far fa-smile"></i> <span class="item-menu">Ajuda</span></a></li>
+                    <li><a href="configuracao.html"><i class="far fa-address-card"></i> <span
+                                class="item-menu">Configuração</span></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="conteudo">
+
+                <div class="container">
+                    <h2>Configuração</h2>
+                    <p>Configuração de conta</p>
+                    <hr>
+                    <form action="#" method="post" enctype="multipart/form-data">
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" value="Diego Rodrigues" readonly required />
+                                <input type="text" id="nome" name="nome" value="Diego Rodrigues" disabled required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" value="diego@email.com" required />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="senha">Senha</label>
+                                <input type="password" id="senha" name="senha" value="1234" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="avatar">Avatar</label>
+                                <input type="file" id="avatar" name="avatar" accept="image/*" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="descricao">Descrição</label>
+                            <textarea id="descricao" name="descricao"
+                                placeholder="Fale um pouco sobre você...">Aqui vai uma mensagem</textarea>
+                        </div>
+
+                        <button type="submit" class="form-button">Alterar conta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Criado por TII11</p>
+        </footer>
+    </main>
+
+</body>
+
+</html>
